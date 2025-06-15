@@ -74,12 +74,17 @@ class _VoicePanelState extends State<VoicePanel> {
       _recordingPath = path;
     });
 
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _elapsedSeconds++;
         _currentDuration = Duration(seconds: _elapsedSeconds);
       });
+
+      if (_elapsedSeconds >= 60) {
+        _stopRecording();
+      }
     });
+
   }
 
   Future<void> _stopRecording() async {
