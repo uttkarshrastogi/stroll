@@ -185,8 +185,8 @@ class _VoicePanelState extends State<VoicePanel> {
                   text: _formatTime(_currentDuration),
                   style: TextStyle(
                     color: (!_isRecording && _hasRecording)
-                        ? Color(0xFFBEBEFE)
-                        : Color(0xFFB4B4B4),
+                        ? AppColors.textPrimary
+                        : AppColors.gray,
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
                   ),
@@ -258,8 +258,8 @@ class _VoicePanelState extends State<VoicePanel> {
                   'Delete',
                   style: TextStyle(
                     color: (_isRecording || _hasRecording)
-                        ? AppColors.darkGray
-                        : AppColors.darkGray.withOpacity(0.4),
+                        ? AppColors.heading
+                        : AppColors.darkGray,
                     fontSize: 17,
                   ),
                 ),
@@ -276,9 +276,9 @@ class _VoicePanelState extends State<VoicePanel> {
               Text(
                 'Submit',
                 style: TextStyle(
-                  color: _hasRecording
-                      ? AppColors.darkGray
-                      : AppColors.darkGray.withOpacity(0.4),
+                  color: ( _hasRecording)
+                      ? AppColors.heading
+                      : AppColors.darkGray,
                   fontSize: 17,
                 ),
               ),
